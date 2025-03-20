@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Juego de Puzzle</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="imageUpload" accept="image/*">
+            <img id="imagePreview" style="display: none;">
+        </div>
+
+        <div class="controls">
+            <select id="numPiezas">
+                <option value="4">2x2</option>
+                <option value="9">3x3</option>
+                <option value="16">4x4</option>
+            </select>
+            <button id="startPuzzle">Comenzar Puzzle</button>
+            <button id="showGuide" disabled>Ver Imagen Original</button>
+            <button id="solvePuzzle" disabled>Resolver Puzzle</button>
+        </div>
+
+        <div id="puzzleContainer"></div>
+
+        <div id="timer">
+            Tiempo: <span id="time">0</span> segundos
+        </div>
+
+        <!-- Modal para la imagen guía -->
+        <div id="guideModal" class="modal" style="display: none;">
+            <div class="modal-content guide-content">
+                <h3>Imagen Original</h3>
+                <img id="guideImage" src="" alt="Imagen guía">
+                <button onclick="closeGuide()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
